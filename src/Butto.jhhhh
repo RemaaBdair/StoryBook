@@ -1,0 +1,16 @@
+"use strict";
+exports.__esModule = true;
+/*
+import React from "react";
+export const Button = ({ backgroundColor, children }) => (
+  <button style={{ backgroundColor: backgroundColor }}>{children}</button>
+);*/
+var React = require("react");
+var noop = function () { };
+exports.Button = function (props) {
+    var children = props.children, onClick = props.onClick, _a = props.disabled, disabled = _a === void 0 ? false : _a;
+    var disabledclass = disabled ? "Button_disabled" : "";
+    return (<div className={"Button " + disabledclass} onClick={!disabled ? onClick : noop}>
+      <span>{children}</span>
+    </div>);
+};
